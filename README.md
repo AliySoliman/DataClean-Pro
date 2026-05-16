@@ -25,7 +25,7 @@ DataCleanPro/
 ├── app.py               ← Visual web app (recommended)
 ├── clean_csv.py         ← Standalone script (no interface)
 ├── requirements.txt     ← Python packages to install
-└── INSTRUCTIONS.md      ← This file
+└── Instructions(How to use).html      ← This file
 ```
 
 Place your CSV files anywhere on your computer.  
