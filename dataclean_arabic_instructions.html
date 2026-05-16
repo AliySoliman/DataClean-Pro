@@ -1,0 +1,188 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .wrap { font-family: 'Cairo', sans-serif; direction: rtl; padding: 1.5rem 1rem; color: var(--color-text-primary); }
+  .page-title { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 4px; }
+  .page-sub { font-size: 14px; color: var(--color-text-secondary); text-align: center; margin-bottom: 2rem; }
+
+  /* Section label */
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: var(--color-text-secondary); text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+
+  /* File cards */
+  .files-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 2rem; }
+  .file-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem; text-align: center; }
+  .file-card .icon-wrap { width: 44px; height: 44px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 22px; }
+  .file-card .fname { font-size: 13px; font-weight: 700; margin-bottom: 4px; direction: ltr; text-align: center; }
+  .file-card .fdesc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.6; }
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px; }
+
+  /* Steps */
+  .steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 2rem; }
+  .step { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+  .step:last-child { border-bottom: none; }
+  .step-num { flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
+  .step-body { flex: 1; }
+  .step-title { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .step-desc { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+  .step-desc b { color: var(--color-text-primary); font-weight: 600; }
+  .code-pill { display: inline-block; background: var(--color-background-secondary); border: 0.5px solid var(--color-border-tertiary); border-radius: 4px; padding: 2px 8px; font-family: monospace; font-size: 12px; direction: ltr; color: var(--color-text-primary); margin: 2px 0; }
+
+  /* App flow */
+  .flow-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; margin-bottom: 2rem; }
+  .flow-step { background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 12px 8px; text-align: center; position: relative; }
+  .flow-step .f-icon { font-size: 20px; margin-bottom: 6px; }
+  .flow-step .f-title { font-size: 12px; font-weight: 700; margin-bottom: 3px; }
+  .flow-step .f-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+  .flow-arrow { display: flex; align-items: center; justify-content: center; font-size: 18px; color: var(--color-text-secondary); padding-top: 16px; }
+
+  /* Tips */
+  .tip-box { background: var(--color-background-success); border: 0.5px solid var(--color-border-success); border-radius: var(--border-radius-md); padding: 10px 14px; margin-bottom: 8px; font-size: 13px; display: flex; align-items: flex-start; gap: 10px; }
+  .tip-box i { font-size: 16px; flex-shrink: 0; margin-top: 2px; color: var(--color-text-success); }
+  .warn-box { background: var(--color-background-warning); border: 0.5px solid var(--color-border-warning); border-radius: var(--border-radius-md); padding: 10px 14px; margin-bottom: 8px; font-size: 13px; display: flex; align-items: flex-start; gap: 10px; }
+  .warn-box i { font-size: 16px; flex-shrink: 0; margin-top: 2px; color: var(--color-text-warning); }
+</style>
+
+<div class="wrap">
+  <h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;">دليل استخدام DataClean Pro بالعربي</h2>
+
+  <div class="page-title">دليل الاستخدام</div>
+  <div class="page-sub">DataClean Pro — تحويل ملفات CSV إلى Excel بشكل تلقائي</div>
+
+  <!-- FILES SECTION -->
+  <div class="section-label">الملفات المرفقة</div>
+  <div class="files-grid">
+
+    <div class="file-card">
+      <div class="icon-wrap" style="background:#EAF3DE;">
+        <i class="ti ti-table" style="color:#3B6D11;font-size:22px;" aria-hidden="true"></i>
+      </div>
+      <div class="tag" style="background:#EAF3DE;color:#3B6D11;">التطبيق الرئيسي</div>
+      <div class="fname">app.py</div>
+      <div class="fdesc">الواجهة البصرية — ترفع فيها ملفات CSV وتنزّل Excel بضغطة زر</div>
+    </div>
+
+    <div class="file-card">
+      <div class="icon-wrap" style="background:#E6F1FB;">
+        <i class="ti ti-code" style="color:#185FA5;font-size:22px;" aria-hidden="true"></i>
+      </div>
+      <div class="tag" style="background:#E6F1FB;color:#185FA5;">المحرك الداخلي</div>
+      <div class="fname">clean_csv.py</div>
+      <div class="fdesc">الكود الذي يشتغل خلف التطبيق — لا تحتاج تفتحه أو تعدّل فيه</div>
+    </div>
+
+    <div class="file-card">
+      <div class="icon-wrap" style="background:#FAEEDA;">
+        <i class="ti ti-package" style="color:#854F0B;font-size:22px;" aria-hidden="true"></i>
+      </div>
+      <div class="tag" style="background:#FAEEDA;color:#854F0B;">مطلوب أولاً</div>
+      <div class="fname">requirements.txt</div>
+      <div class="fdesc">قائمة بالمكتبات اللي يحتاجها البرنامج — يُنصّب مرة واحدة فقط</div>
+    </div>
+
+  </div>
+
+  <!-- SETUP STEPS -->
+  <div class="section-label">خطوات التثبيت — مرة واحدة فقط</div>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num" style="background:#EAF3DE;color:#3B6D11;">١</div>
+      <div class="step-body">
+        <div class="step-title">تنزيل Python</div>
+        <div class="step-desc">
+          افتح الموقع <b>python.org/downloads</b> ونزّل أحدث نسخة.<br>
+          أثناء التثبيت، <b>تأكد تضع علامة ✓ على "Add Python to PATH"</b> قبل ما تضغط Install.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num" style="background:#E6F1FB;color:#185FA5;">٢</div>
+      <div class="step-body">
+        <div class="step-title">فتح Terminal أو Command Prompt</div>
+        <div class="step-desc">
+          على <b>Windows</b>: اضغط <span class="code-pill">Win + R</span> واكتب <span class="code-pill">cmd</span> ثم Enter.<br>
+          على <b>Mac</b>: افتح Spotlight وابحث عن <span class="code-pill">Terminal</span>.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num" style="background:#FAEEDA;color:#854F0B;">٣</div>
+      <div class="step-body">
+        <div class="step-title">الانتقال إلى مجلد البرنامج</div>
+        <div class="step-desc">
+          اكتب الأمر التالي واستبدل المسار بمكان مجلد DataCleanPro عندك:<br>
+          <span class="code-pill">cd C:\Users\اسمك\Desktop\DataCleanPro</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num" style="background:#EEEDFE;color:#3C3489;">٤</div>
+      <div class="step-body">
+        <div class="step-title">تنصيب المكتبات — مرة واحدة فقط</div>
+        <div class="step-desc">
+          اكتب هذا الأمر واضغط Enter وانتظر حتى ينتهي:<br>
+          <span class="code-pill">pip install -r requirements.txt</span><br>
+          هذا كل شي، ما تحتاج تكرره بعد كذا.
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num" style="background:#E1F5EE;color:#0F6E56;">٥</div>
+      <div class="step-body">
+        <div class="step-title">تشغيل التطبيق</div>
+        <div class="step-desc">
+          اكتب هذا الأمر واضغط Enter:<br>
+          <span class="code-pill">streamlit run app.py</span><br>
+          سيفتح المتصفح تلقائياً على التطبيق. هذا الأمر تكتبه كل مرة تريد تشغّل البرنامج.
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HOW TO USE THE APP -->
+  <div class="section-label">كيف تستخدم التطبيق</div>
+  <div class="flow-grid">
+    <div class="flow-step">
+      <div class="f-icon"><i class="ti ti-upload" style="color:#185FA5;" aria-hidden="true"></i></div>
+      <div class="f-title">ارفع الملف</div>
+      <div class="f-desc">اسحب ملف CSV أو أكثر وأفلته في منطقة الرفع</div>
+    </div>
+    <div class="flow-step">
+      <div class="f-icon"><i class="ti ti-settings" style="color:#854F0B;" aria-hidden="true"></i></div>
+      <div class="f-title">اختر الإعدادات</div>
+      <div class="f-desc">من القائمة الجانبية اختر كيف تتعامل مع القيم الفارغة</div>
+    </div>
+    <div class="flow-step">
+      <div class="f-icon"><i class="ti ti-eye" style="color:#3C3489;" aria-hidden="true"></i></div>
+      <div class="f-title">راجع النتائج</div>
+      <div class="f-desc">يظهر تقرير بكل ما تم تنظيفه وعدد الصفوف المحذوفة</div>
+    </div>
+    <div class="flow-step">
+      <div class="f-icon"><i class="ti ti-download" style="color:#0F6E56;" aria-hidden="true"></i></div>
+      <div class="f-title">نزّل Excel</div>
+      <div class="f-desc">اضغط زر التنزيل واحصل على ملف Excel نظيف وجاهز</div>
+    </div>
+  </div>
+
+  <!-- TIPS -->
+  <div class="section-label">ملاحظات مهمة</div>
+  <div class="tip-box">
+    <i class="ti ti-circle-check" aria-hidden="true"></i>
+    <div>لو البرنامج قال "no rows left" — غيّر الاستراتيجية في الشريط الجانبي إلى <b>"Fill with mean / median"</b> بدل حذف الصفوف.</div>
+  </div>
+  <div class="tip-box">
+    <i class="ti ti-circle-check" aria-hidden="true"></i>
+    <div>البرنامج يدعم ملفات CSV بأي ترميز أو فاصل (فاصلة، فاصلة منقوطة، tab) — يكتشف كل شي تلقائي.</div>
+  </div>
+  <div class="warn-box">
+    <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+    <div>لا تغلق نافذة Terminal أثناء استخدام التطبيق — لو أغلقتها سيتوقف البرنامج. لإيقافه بشكل صحيح اضغط <span class="code-pill">Ctrl + C</span> في Terminal.</div>
+  </div>
+
+</div>
